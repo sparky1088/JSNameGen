@@ -10,7 +10,7 @@ NameGen.js comes from a reddit user /u/boltorian as well as the DM Screen from w
 
 I highly recommend looking at wikipedia for some of the names as they sometimes give meanings so if you are looking for an interesting name with a particular type of meaning/sound then head over there.
 
-You can get name lists from all sorts of sources, if you have some patience you can extract a bunch from the behind the name website [Linked] (https://www.behindthename.com/names). 
+You can get name lists from all sorts of sources, if you have some patience you can extract a bunch from the behind the name website [Linked](https://www.behindthename.com/names). 
 
 I am working on pulling as many as I can from wikipedia of various origins and will eventually separate them out so that the phb name generator is a separte html file and each different nationality/language names will be selectable in their own dropdown like the phb one currently is. 
 
