@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Name Generator</title>
+	<script type="text/javascript" src="koreanNames.js"></script>
+	<script type="text/javascript" src="egyptianNames.js"></script>
+	<script type="text/javascript" src="names.js"></script>
+	<script type="text/javascript" src="phbNames.js"></script>
+	<script type="text/javascript" src="nameGen.js"></script>
+	<script type="text/javascript" src="array_functions.js"></script>
+	<style>
+* {
+  box-sizing: border-box;
+}
+/* attempting to fix height problem*/
+.row {
+  display: -webkit-flex; 
+  display: -ms-flexbox; 
+  display: flex; 
+  overflow: hidden;
+}/*
+.row .column {
+  flex: 1
+}*/
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+  .row {
+      flex-wrap: wrap;
+  }
+}
+	</style>
+
+</head>
+
+<body>
+	<h3>Name Generator</h3>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+        <!--PHB Dwarf Female Name Generator-->
+                <h4>PHB Dwarf Female</h4>
+                        <button onclick="reuseID('phbDwarfNameFemale');multipleArrayItemsPrintCombineId(phb_dwarf_names_female,phb_dwarf_names_clan,1,'phbDwarfNameFemale')">Generate</button>
+                        <div id=phbDwarfNameFemale></div>
+        
+	<!--PHB Dwarf Male Name Generator-->
+                <h4>PHB Dwarf Male</h4>
+                        <button onclick="reuseID('phbDwarfNameMale');multipleArrayItemsPrintCombineId(phb_dwarf_names_male,phb_dwarf_names_clan,1,'phbDwarfNameMale')">Generate</button>
+                        <div id=phbDwarfNameMale></div>
+  </div>  <!-- End of Dwarf column -->
+  
+  <div class="column" style="background-color:#bbb;">
+	<!--PHB Elf Child Name Generator-->
+                <h4>PHB Elf Child</h4>
+                        <button onclick="reuseID('phbElfChildName');multipleArrayItemsPrintCombineId(phb_elf_child_names,phb_elf_family_names,1,'phbElfChildName')">Generate</button>
+                        <div id=phbElfChildName></div>
+        
+			
+	<!--PHB Elf Female Name Generator-->
+                <h4>PHB Elf Female</h4>
+                        <button onclick="reuseID('phbElfNameFemale');multipleArrayItemsPrintCombineId(phb_elf_names_female,phb_elf_family_names,1,'phbElfNameFemale')">Generate</button>
+                        <div id=phbElfNameFemale></div>
+        
+			
+	<!--PHB Elf Male Name Generator-->
+                <h4>PHB Elf Male</h4>
+                        <button onclick="reuseID('phbElfNameMale');multipleArrayItemsPrintCombineId(phb_elf_names_female,phb_elf_family_names,1,'phbElfNameMale')">Generate</button>
+                        <div id=phbElfNameMale></div>
+  </div> <!-- End of Elf column -->
+
+  <div class="column" style="background-color:#ccc;">
+        <!--PHB Halfling Female Name Generator-->
+                <h4>PHB Halfling Female</h4>
+                        <button onclick="reuseID('phbHalflingNameFemale');multipleArrayItemsPrintCombineId(phb_halfling_names_female,phb_halfling_family_names,1,'phbHalflingNameFemale')">Generate</button>
+                        <div id=phbHalflingNameFemale></div>
+        <!--PHB Halfling Male Name Generator-->
+                <h4>PHB Halfling Male</h4>
+                        <button onclick="reuseID('phbHalflingNameMale');multipleArrayItemsPrintCombineId(phb_halfling_names_male,phb_halfling_family_names,1,'phbHalflingNameMale')">Generate</button>
+                        <div id=phbHalflingNameMale></div>
+  </div> <!-- End of Halfling column -->
+  
+  <div class="column" style="background-color:#ddd;">
+	<!-- First a Human race is grabbed and then a name is generated based off Race.
+	This is rerun each time a new name is generated. -->
+	  <!--PHB Human Female Name Generator-->
+                <h4>PHB Human Female</h4>
+                        <button onclick="reuseID('phbSingleHumanNameFemale');phbRandomHumanNamePrint('female','phbSingleHumanNameFemale',1)">Generate</button>
+                        <div id=phbSingleHumanNameFemale></div>
+
+        <!--PHB Human Male Name Generator-->
+                <h4>PHB Human Male</h4>
+                        <button onclick="reuseID('phbSingleHumanNameMale');phbRandomHumanNamePrint('male','phbSingleHumanNameMale',1)">Generate</button>
+                        <div id=phbSingleHumanNameMale></div>
+  </div> <!-- End of human column -->
+</div> <!-- End of first Row -->
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+  	<!--PHB Dragonborn Child Name Generator-->
+                <h4>PHB Dragonborn Child</h4>
+                        <button onclick="reuseID('phbDragonbornChildName');multipleArrayItemsPrintCombineId(phb_dragonborn_child_names,phb_dragonborn_clan_names,1,'phbDragonbornChildName')">Generate</button>
+                        <div id=phbDragonbornChildName></div>
+        <!--PHB Dragonborn Female Name Generator-->
+                <h4>PHB Dragonborn Female</h4>
+                        <button onclick="reuseID('phbDragonbornNameFemale');multipleArrayItemsPrintCombineId(phb_dragonborn_names_female,phb_dragonborn_names_female,1,'phbDragonbornNameFemale')">Generate</button>
+                        <div id=phbDragonbornNameFemale></div>
+        
+	<!--PHB Dragonborn Male Name Generator-->
+                <h4>PHB Dragonborn Male</h4>
+                        <button onclick="reuseID('phbDragonbornNameMale');multipleArrayItemsPrintCombineId(phb_dragonborn_names_male,phb_dragonborn_names_male,1,'phbDragonbornNameMale')">Generate</button>
+                        <div id=phbDragonbornNameMale></div>
+  </div> <!-- End of Dragonborn column -->     
+
+  <div class="column" style="background-color:#bbb;">
+  	<!--PHB Gnome Nickname Generator-->
+                <h4>PHB Gnome Nickname</h4>
+                        <button onclick="reuseID('phbGnomeNickname');getRandomItemsPrintId(phb_gnome_nicknames,1,'phbGnomeNickname')">Generate</button>
+                        <div id=phbGnomeNickname></div>
+        <!--PHB Gnome Female Name Generator-->
+                <h4>PHB Gnome Female</h4>
+                        <button onclick="reuseID('phbGnomeNameFemale');multipleArrayItemsPrintCombineId(phb_gnome_names_female,phb_gnome_clan_names,1,'phbGnomeNameFemale')">Generate</button>
+                        <div id=phbGnomeNameFemale></div>
+        
+	<!--PHB Gnome Male Name Generator-->
+                <h4>PHB Gnome Male</h4>
+                        <button onclick="reuseID('phbGnomeNameMale');multipleArrayItemsPrintCombineId(phb_gnome_names_male,phb_gnome_clan_names,1,'phbGnomeNameMale')">Generate</button>
+                        <div id=phbGnomeNameMale></div>
+  </div> <!-- End of Gnome column-->  
+
+    <div class="column" style="background-color:#ccc;">
+        <!-- Orc Female Name Generator-->
+        <h4>Orc/HalfOrc Female</h4>
+            <button onclick="getRandomItemsPrintId(phb_orc_names_female,1,'phbOrcNameFemale')">Generate</button>
+            <div id=phbOrcNameFemale></div>
+        <!-- Orc Male Name Generator-->
+        <h4>Orc/HalfOrc Male</h4>
+            <button onclick="getRandomItemsPrintId(phb_orc_names_male,1,'phbOrcNameMale')">Generate</button>
+            <div id=phbOrcNameMale></div>
+  </div> <!-- End of Orc column -->
+
+    <div class="column" style="background-color:#ddd;">
+        <!-- Tiefling Female Name Generator-->
+        <h4>Tiefling Infernal Female</h4>
+            <button onclick="getRandomItemsPrintId(phb_tiefling_infernal_names_female,1,'phbTieflingInfernalNameFemale')">Generate</button>
+            <div id=phbTieflingInfernalNameFemale></div>
+        <!-- Tiefling Male Name Generator-->
+        <h4>Tiefling Infernal Male</h4>
+            <button onclick="getRandomItemsPrintId(phb_tiefling_infernal_names_male,1,'phbTieflingInfernalNameMale')">Generate</button>
+            <div id=phbTieflingInfernalNameMale></div>
+        
+        <h4>Tiefling Virtue</h4>
+            <button onclick="getRandomItemsPrintId(phb_tiefling_virtue_names,1,'phbTieflingVirtueName')">Generate</button>
+            <div id=phbTieflingVirtueName></div>
+  </div> <!-- End of Tiefling column -->
+  
+  <div class="column" style="background-color:#fff;">
+	<!--Egyption Name Generator-->
+		<h4>Egyptian</h4>
+			<button onclick="getRandomItemsPrintId(egyptian_names,1,'egyptianName')">Generate</button>
+			<div id=egyptianName></div>
+        <!--Korean Female Name Generator-->
+        <h4>Korean Female</h4>
+            <button onclick="reuseID('koreanNameFemale');multipleArrayItemsPrintCombineId(common_korean_names_female,korean_surnames,1,'koreanNameFemale')">Generate</button>
+            <div id=koreanNameFemale></div>
+        <!--Korean Male Name Generator-->
+        <h4>Korean Male</h4>
+            <button onclick="reuseID('koreanNameMale');multipleArrayItemsPrintCombineId(common_korean_names_male,korean_surnames,1,'koreanNameMale')">Generate</button>
+            <div id=koreanNameMale></div>
+  </div> <!-- End of column -->
+</div>  <!-- End of Secind Row -->
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+<!-- Random Name Generator-->
+        <h4>Random Name Generater</h4>
+            <button onclick="printNameGenId('nameGen')">Generate</button>
+            <div id=nameGen></div>
+</div> <!-- End of Random Name Generator Column --->
+  <div id="submitDiv" class="column">
+
+<!-- Get the nuumerical number of results -->
+<p>Input up to 999</p>
+<input type="text" id="numberOfResults" value="1" maxlength="3" size="5">
+<!-- select male or female -->
+
+<select id="gender">
+     <option value='male'>Male</option>
+     <option value='female'>Female</option>        
+ </select> 
+
+ <select id="race">
+     <option value='dwarf'>Dwarf</option>
+     <option value='elf'>Elf</option>
+     <option value='halfling'>Halfling</option>
+     <option value='human'>Human</option>
+     <option value='dragonborn'>Dragonborn</option>
+     <option value='gnome'>Gnome</option>
+     <option value='orc'>Orc or Half Orc</option>
+     <option value='tiefling'>Tiefling</option>
+ </select> 
+ <button onclick="reuseID('submitSelect');submitNameGeneratorPHB('submitSelect')">Submit</button>
+ <div id="submitSelect">
+</div>
+</div> <!-- End of submitDiv -->
+
+</div> <!-- End of Row -->
+
+
+<div class="row"> <!-- Footer Row -->
+<!-- Footer -->
+
+  <div class="column" style="background-color:#fff;">
+  </div>
+  <div class="column" style="background-color:#fff;">
+  </div>
+  <div class="column" style="background-color:#fff;">
+  </div>
+  <div class="column" style="background-color:#fff;">
+
+        <h5>Created By Curiosthedeadcat</h5>
+            <p><a href="mailto:admin@noEmail4u.com">Contact me</a></p>
+            <p>Content is free to use and abuse</p>
+</div> <!-- End of Footer Column --->
+</div> <!-- End of Row Footer -->
+
+</body>
+
+</html>

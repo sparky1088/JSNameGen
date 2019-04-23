@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Name Generator</title>
+	<script type="text/javascript" src="names.js"></script>
+	<style>
+* {
+  box-sizing: border-box;
+}
+/* attempting to fix height problem*/
+.row {
+  display: -webkit-flex; 
+  display: -ms-flexbox; 
+  display: flex; 
+  overflow: hidden;
+}/*
+.row .column {
+  flex: 1
+}*/
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+  .row {
+      flex-wrap: wrap;
+  }
+}
+	</style>
+
+</head>
+
+<body>
+	<h3>Name Generator</h3>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+        <!--PHB Dwarf Female Name Generator-->
+                <h4>PHB Dwarf Female</h4>
+                        <button onclick="randomDwarfNameFemalef()">Generate</button>
+                        <div id=dwarfNameFemale></div>
+        
+	<!--PHB Dwarf Male Name Generator-->
+                <h4>PHB Dwarf Male</h4>
+                        <button onclick="randomDwarfNameMalef()">Generate</button>
+                        <div id=dwarfNameMale></div>
+  </div>      
+  
+  <div class="column" style="background-color:#bbb;">
+	<!--PHB Elf Child Name Generator-->
+                <h4>PHB Elf Child</h4>
+                        <button onclick="randomElfChildNamef()">Generate</button>
+                        <div id=elfChildName></div>
+        
+			
+	<!--PHB Elf Female Name Generator-->
+                <h4>PHB Elf Female</h4>
+                        <button onclick="randomElfNameFemalef()">Generate</button>
+                        <div id=elfNameFemale></div>
+        
+			
+	<!--PHB Elf Male Name Generator-->
+                <h4>PHB Elf Male</h4>
+                        <button onclick="randomElfNameMalef()">Generate</button>
+                        <div id=elfNameMale></div>
+  </div>
+
+  <div class="column" style="background-color:#ccc;">
+        <!--PHB Halfling Female Name Generator-->
+                <h4>PHB Halfling Female</h4>
+                        <button onclick="randomHalflingNameFemalef()">Generate</button>
+                        <div id=halflingNameFemale></div>
+        <!--PHB Halfling Male Name Generator-->
+                <h4>PHB Halfling Male</h4>
+                        <button onclick="randomHalflingNameMalef()">Generate</button>
+                        <div id=halflingNameMale></div>
+  </div>
+  
+  <div class="column" style="background-color:#ddd;">
+	<!-- First a Human race is grabbed and then a name is generated based off Race.
+	This is rerun each time a new name is generated. -->
+	  <!--PHB Human Female Name Generator-->
+                <h4>PHB Human Female</h4>
+                        <button onclick="singleRandomHumanNameFemalef()">Generate</button>
+                        <div id=humanNameFemale></div>
+
+        <!--PHB Human Male Name Generator-->
+                <h4>PHB Human Male</h4>
+                        <button onclick="randomHumanNameMalef()">Generate</button>
+                        <div id=humanNameMale></div>
+  </div>
+</div>
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+  	<!--PHB Dragonborn Child Name Generator-->
+                <h4>PHB Dragonborn Child</h4>
+                        <button onclick="randomDragonbornChildNamef()">Generate</button>
+                        <div id=dragonbornChildName></div>
+        <!--PHB Dragonborn Female Name Generator-->
+                <h4>PHB Dragonborn Female</h4>
+                        <button onclick="randomDragonbornNameFemalef()">Generate</button>
+                        <div id=DragonbornNameFemale></div>
+        
+	<!--PHB Dragonborn Male Name Generator-->
+                <h4>PHB Dragonborn Male</h4>
+                        <button onclick="randomDragonbornNameMalef()">Generate</button>
+                        <div id=dragonbornNameMale></div>
+  </div>      
+  
+  <div class="column" style="background-color:#ddd;">
+	<!--Egyption Name Generator-->
+		<h4>Egyptian</h4>
+			<button onclick="randomEgyptianNamef()">Generate</button>
+			<div id=egyptianName></div>
+        <!--Korean Female Name Generator-->
+                <h4>Korean Female</h4>
+                        <button onclick="randomKoreanNameFemalef()">Generate</button>
+                        <div id=koreanNameFemale></div>
+        <!--Korean Male Name Generator-->
+                <h4>Korean Male</h4>
+                        <button onclick="randomKoreanNameMalef()">Generate</button>
+                        <div id=koreanNameMale></div>
+  </div>
+</div>
+</body>
+
+</html>
