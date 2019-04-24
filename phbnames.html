@@ -50,7 +50,47 @@
 </head>
 
 <body>
-	<h3>Name Generator</h3>
+    <h3>Name Generator</h3>
+    
+<div class="row">
+
+<div id="submitDiv" class="column" style="background-color:#aaa;">
+<!-- Get the nuumerical number of results -->
+<p>Input up to 999</p>
+<input type="text" id="numberOfResults" value="1" maxlength="3" size="5">
+<!-- select male or female -->
+
+<select id="gender">
+     <option value='male'>Male</option>
+     <option value='female'>Female</option>        
+ </select> 
+
+ <select id="race">
+     <option value='dwarf'>Dwarf</option>
+     <option value='elf'>Elf</option>
+     <option value='halfling'>Halfling</option>
+     <option value='human'>Human</option>
+     <option value='dragonborn'>Dragonborn</option>
+     <option value='gnome'>Gnome</option>
+     <option value='orc'>Orc or Half Orc</option>
+     <option value='tiefling'>Tiefling</option>
+ </select> 
+ <button onclick="reuseID('submitSelect');submitNameGeneratorPHB('submitSelect')">Submit</button>
+ <div id="submitSelect"></div>
+</div> <!-- End of submitDiv -->
+
+<div class="column" style="background-color:#fff;">
+<!-- Random Name Generator-->
+        <h4>Random Name Generater</h4>
+            <button onclick="printFirstLastNameGenId('nameGen')">Generate</button>
+            <div id=nameGen></div>
+</div> <!-- End of Random Name Generator Column --->
+
+
+
+</div> <!-- End of Row -->
+
+    
 <div class="row">
   <div class="column" style="background-color:#aaa;">
         <!--PHB Dwarf Female Name Generator-->
@@ -107,7 +147,8 @@
                         <button onclick="reuseID('phbSingleHumanNameMale');phbRandomHumanNamePrint('male','phbSingleHumanNameMale',1)">Generate</button>
                         <div id=phbSingleHumanNameMale></div>
   </div> <!-- End of human column -->
-</div> <!-- End of first Row -->
+</div> <!-- End of Row -->
+
 <div class="row">
   <div class="column" style="background-color:#aaa;">
   	<!--PHB Dragonborn Child Name Generator-->
@@ -168,43 +209,6 @@
   </div> <!-- End of Tiefling column -->
   </div> <!-- End of row -->
   
-
-<div class="row">
-<div class="column" style="background-color:#aaa;">
-<!-- Random Name Generator-->
-        <h4>Random Name Generater</h4>
-            <button onclick="printFirstLastNameGenId('nameGen')">Generate</button>
-            <div id=nameGen></div>
-</div> <!-- End of Random Name Generator Column --->
-
-
-<div id="submitDiv" class="column">
-<!-- Get the nuumerical number of results -->
-<p>Input up to 999</p>
-<input type="text" id="numberOfResults" value="1" maxlength="3" size="5">
-<!-- select male or female -->
-
-<select id="gender">
-     <option value='male'>Male</option>
-     <option value='female'>Female</option>        
- </select> 
-
- <select id="race">
-     <option value='dwarf'>Dwarf</option>
-     <option value='elf'>Elf</option>
-     <option value='halfling'>Halfling</option>
-     <option value='human'>Human</option>
-     <option value='dragonborn'>Dragonborn</option>
-     <option value='gnome'>Gnome</option>
-     <option value='orc'>Orc or Half Orc</option>
-     <option value='tiefling'>Tiefling</option>
- </select> 
- <button onclick="reuseID('submitSelect');submitNameGeneratorPHB('submitSelect')">Submit</button>
- <div id="submitSelect"></div>
-</div> <!-- End of submitDiv -->
-
-</div> <!-- End of Row -->
-
 
 </body>
 
