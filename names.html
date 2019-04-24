@@ -3,12 +3,19 @@
 
 <head>
   <title>Name Generator</title>
-	<script type="text/javascript" src="array_functions.js"></script>
-	<script type="text/javascript" src="koreanNames.js"></script>
-	<script type="text/javascript" src="egyptianNames.js"></script>
-	<script type="text/javascript" src="japaneseNames.js" charset="utf-8"></script>
-	<script type="text/javascript" src="valkarieNames.js" charset="utf-8"></script>
-	<style>
+    <script type="text/javascript" src="array_functions.js"></script>
+    <script type="text/javascript" src="koreanNames.js"></script>
+    <script type="text/javascript" src="egyptianNames.js"></script>
+    <script type="text/javascript" src="irishNames.js" charset="utf-8"></script>
+    <script type="text/javascript" src="japaneseNames.js" charset="utf-8"></script>
+    <script type="text/javascript" src="norseNames.js" charset="utf-8"></script>
+    <script type="text/javascript" src="scottGaelicNames.js" charset="utf-8"></script>
+    <script type="text/javascript" src="valkarieNames.js" charset="utf-8"></script>
+    <script type="text/javascript" src="starNames.js" charset="utf-8"></script>
+    <script type="text/javascript" src="mshaeNames.js"></script>
+    <script type="text/javascript" src="nameGen.js"></script>
+    
+    <style>
 * {
   box-sizing: border-box;
 }
@@ -65,28 +72,39 @@
 <select id="gender">
      <option value='male'>Male</option>
      <option value='female'>Female</option>
-     <option value='unisex'>Androgynous</option>         
+     <option value='unisex'>Androgynous</option>
+     <option value='unknown'>Unknown</option>
  </select> 
 
 <select id="ethnicity">
     <option value='egyptian'>Egyptian</option>
+    <option value='irish'>Irish</option>
     <option value='japanese'>Japanese</option>
     <option value='korean'>Korean</option>
+    <option value='norse'>Norse</option>
+    <option value='scottGaelic'>Scott/Gaelic</option>
     <option value='valkarie'>Valkarie</option>
+    <option value='star'>Stars</option>
+    <option value='random'>Random Gen</option>
 </select>
 
  <button onclick="reuseID('submitSelect');submitNameGenerator('submitSelect')">Submit</button>
  <div id="submitSelect"></div>
 <p>
-* NOTE that some names (eg Egyptian) either have not been separated or are based on best guess, 
-right now they function with all options using the same array.
+* NOTE that some names (eg Egyptian or Stars) either have not been separated or are based on best guess, 
+right now they function with all options using the same array. 
 <br>
-All Valkarie Names are female technically but they work the same as egyptian.
+The unknown option is for names where I was unable to make a best guess. 
+Right now it returns nothing as I haven't separated out the best guess options.
+<br>
+The random option also ignores sex as the name is randomly made by combining 3 one syllable arrays.
+And uses the combined list of Surnames from Mike Shae (Sly Flourish).
 </p>
 </div> <!-- End of submitDiv -->
+</div> <!-- End of Row 1 -->
 
-
-    <div class="column" style="background-color:#bbb;">
+<div class="row">
+    <div class="column" style="background-color:#aaa;">
     <!--Egyption Name Generator-->
         <h4>Egyptian</h4>
             <button onclick="getRandomItemsPrintId(egyptian_names,1,'egyptianName')">Generate</button>
@@ -94,7 +112,7 @@ All Valkarie Names are female technically but they work the same as egyptian.
     </div> <!-- End of Egyptian -->
     
   
-   <div class="column" style="background-color:#ccc;">
+   <div class="column" style="background-color:#bbb;">
         <!--Korean Female Name Generator-->
         <h4>Korean Female</h4>
             <button onclick="reuseID('koreanNameFemale');multipleArrayItemsPrintCombineId(common_korean_names_female,korean_surnames,1,'koreanNameFemale')">Generate</button>
@@ -106,7 +124,7 @@ All Valkarie Names are female technically but they work the same as egyptian.
   </div> <!-- End of column -->
   
   
-  <div class="column" style="background-color:#ddd;">
+  <div class="column" style="background-color:#ccc;">
 <!-- Japanese Female Name Generator -->
         <h4>Japanese Female</h4>
             <button onclick="reuseID('japaneseNameFemale');multipleArrayItemsPrintCombineId(common_japanese_surnames,japanese_names_female,1,'japaneseNameFemale')">Generate</button>
@@ -119,25 +137,44 @@ All Valkarie Names are female technically but they work the same as egyptian.
 </div> <!-- End of Japanese Name Generator Column --->
   
   
-</div>  <!-- End of Row 1 -->
-
+</div>  <!-- End of Row 2 -->
 
 
 <div class="row">
   <div class="column" style="background-color:#aaa;">
-<!-- Japanese Female Name Generator -->
-        <h4>Japanese Female</h4>
-            <button onclick="reuseID('japaneseNameFemale');multipleArrayItemsPrintCombineId(common_japanese_surnames,japanese_names_female,1,'japaneseNameFemale')">Generate</button>
-            <div id=japaneseNameFemale></div>
-<!-- Japanese Male Name Generator -->
-        <h4>Japanese Male</h4>
-            <button onclick="reuseID('japaneseNameMale');multipleArrayItemsPrintCombineId(common_japanese_surnames,japanese_names_male,1,'japaneseNameMale')">Generate</button>
-            <div id=japaneseNameMale></div>
+<!-- Irish Female Name Generator -->
+        <h4>Irish Female</h4>
+            <button onclick="reuseID('irishNameFemale');multipleArrayItemsPrintCombineId(irish_names_female,irish_surnames,1,'irishNameFemale')">Generate</button>
+            <div id=irishNameFemale></div>
+<!-- Irish Male Name Generator -->
+        <h4>Irisih Male</h4>
+            <button onclick="reuseID('irishNameMale');multipleArrayItemsPrintCombineId(irish_names_male,irish_surnames,1,'irishNameMale')">Generate</button>
+            <div id=irishNameMale></div>
 
-</div> <!-- End of Japanese Name Generator Column --->
+</div> <!-- End of Irish Name Generator Column --->
 
 
-</div> <!-- End of Row -->
+    <div class="column" style="background-color:#bbb;">
+    <!-- Norse Name Generator-->
+        <h4>Norse Female</h4>
+            <button onclick="getRandomItemsPrintId(norse_names_female,1,'norseFemaleName')">Generate</button>
+            <div id=norseFemaleName></div>
+        <h4>Norse Male</h4>
+            <button onclick="getRandomItemsPrintId(norse_names_male,1,'norseMaleName')">Generate</button>
+            <div id=norseMaleName></div>
+    </div> <!-- End of Norse -->
+
+    <div class="column" style="background-color:#ccc;">
+    <!-- Scott/Gaelic Name Generator-->
+        <h4>Scott/Gaelic Female</h4>
+            <button onclick="reuseID('scottGaelicNameFemale');multipleArrayItemsPrintCombineId(scottish_gaelic_names_female,scottish_gaelic_surnames,1,'scottGaelicNameFemale')">Generate</button>
+            <div id=scottGaelicNameFemale></div>
+        <h4>Scott/Gaelic Male</h4>
+            <button onclick="reuseID('scottGaelicNameMale');multipleArrayItemsPrintCombineId(scottish_gaelic_names_male,scottish_gaelic_surnames,1,'scottGaelicNameMale')">Generate</button>
+            <div id=scottGaelicNameMale></div>
+    </div> <!-- End of Scott/Gaelic -->
+    
+</div> <!-- End of Row 3 -->
 
 
 </body>

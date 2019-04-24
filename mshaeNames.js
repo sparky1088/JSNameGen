@@ -122,7 +122,9 @@ var mshae_last_names_one = [
 'Rain','Rat','Red','Riddle',
 'Scale','Shadow','Sharp','Shield','Siege','Silver','Smile','Song','Spell','Spider','Spine','Spirit','Spring','Stale','Star','Stone','Storm','Strife','Swift','Sword',
 'Tall','Thorn','Tiger','Titan','Trail','Tree',
-'White','Willow','Wise','Wolf','Worm','Wyrm'
+'White','Willow','Wise','Wolf','Worm','Wyrm',
+/* I wanted a bit more variety so I added some */
+'Cannon','Elm','Fur','Heavy','Water'
 ]
 
 var mshae_last_names_two = [
@@ -137,8 +139,53 @@ var mshae_last_names_two = [
 'laugher','lover',
 'maker','master','maul',
 'rain','razor','rend','river','rock','runner',
-'sail','seeker','sharp','singer','slicer','smasher','smile','son','song','soother','sorcerer','soul','spear','spur','stalker','star','steel','stinger','stone','storm','storm',
+'sail','seeker','sharp','singer','slicer','smasher','smile','son','song','soother','sorcerer','soul','spear','spur','stalker','star','steel','stinger','stone',
+'storm','strom',
 'talker','teeth','thumb','toes','tongue','tooth','touch','trail','traveler','tromp',
 'valley','viper',
-'walker','watcher','whisker','whisper','willow','wind','wing'
+'walker','watcher','whisker','whisper','willow','wind','wing',
+/* I wanted a bit more variety so I added some */
+'ship'
+]
+
+/* You might want to make sure some of these sound right when using them. */
+var mshae_last_names_combined = [
+'Angel','Anvil','Arrow',
+'bear','beast','blue','bright','broad','bronze','bull',
+'cat','cloud','copper','crow',
+'dark','dawn','dirt','dog','doom','dragon','drake','drum','dusk','dust',
+'eagle','earth','ebon','emerald',
+'faerie','fire','flame','flower','foe','forge','fox','free','frost',
+'gem','gentle','ghost','ghoul','giant','glass','gloom','glory','goblin','gold','goose','grass','grave','gravel','gray','green','gust',
+'hair','half','harp','hawk','hero','hill','holly',
+'ice','iron',
+'jewel',
+'kill','king','knife',
+'late','law','leaf','light','lion','long',
+'mace','mill','monster','moon','mountain','mud',
+'needle','night','north',
+'oak','ox',
+'quick',
+'rain','rat','red','riddle',
+'scale','shadow','sharp','shield','siege','silver','smile','song','spell','spider','spine','spirit','spring','stale','star','stone','storm','strife','swift','sword',
+'tall','thorn','tiger','titan','trail','tree',
+'white','willow','wise','wolf','worm','wyrm',
+'cannon','elm','fur','heavy','water',
+'bane','beard','belly','blade','blood','board','bond','boot','born','bottom','bound','bright','brissle','brood','brow','buckle',
+'caller','carol','caster','change','chaser','chest','chewer','chuckle','claw','cleaver','cloak','cloud','cowl','crippler','cry','cutter',
+'dance','dancer','dazer',
+'ear',
+'fall','fang','finger','flinger','forger',
+'gaze','giver','glacier','glove','gust',
+'hair','hammer','hand','harp','heart','heart','helm','hide','hood','hoof','hound','house','howler','hunter',
+'kick','kin','kiss','knee','knee','knocker',
+'laugher','lover',
+'maker','master','maul',
+'rain','razor','rend','river','rock','runner',
+'sail','seeker','sharp','singer','slicer','smasher','smile','son','song','soother','sorcerer','soul','spear','spur','stalker','star','steel','stinger','stone',
+'storm','strom',
+'talker','teeth','thumb','toes','tongue','tooth','touch','trail','traveler','tromp',
+'valley','viper',
+'walker','watcher','whisker','whisper','willow','wind','wing',
+'ship'
 ]

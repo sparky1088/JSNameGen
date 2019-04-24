@@ -33,6 +33,7 @@ function getRandomItems(arr, n) {
         result[n] = arr[x in taken ? taken[x] : x];
         taken[x] = --len in taken ? taken[len] : len;
     }
+    console.log(result);
     return result;
 }
 
@@ -370,18 +371,41 @@ function submitNameGeneratorPHB(id){
     }
 }
 
-function randomeNameGen(arr1,arr2,arr3){
+function randomNameGen(arr1,arr2,arr3){
     var item1 = getRandomItems(arr1,1);
     var item2 = getRandomItems(arr2,1);
     var item3 = getRandomItems(arr3,1);
     return item1 + item2 + item3
 }
 
+function randomSurnameGen(arr1,arr2){
+    var item1 = getRandomItems(arr1,1);
+    var item2 = getRandomItems(arr2,1);
+    return item1 + item2
+}
+
+function printFirstLastNameGenId(id){
+    var result = randomNameGen(nameGenBeginning,nameGenMiddle,nameGenEnd);
+    var result2 = randomSurnameGen(mshae_last_names_one,mshae_last_names_two);
+    document.getElementById(id).innerHTML= result + ' ' + result2;
+}
+
 function printNameGenId(id){
-    var result = randomeNameGen(nameGenBeginning,nameGenMiddle,nameGenEnd);
+    var result = randomNameGen(mshae_last_names_one,mshae_last_names_two);
     document.getElementById(id).innerHTML= result;
 }
 
+/* Using this because I'm lazy and I figure this is the easiest way to combine both parts of Mike Shae's without
+   having to change everything and figure out how to just capitalize the first letter of the printed outcome. */
+function toUpper(item) {
+    return item.toUpperCase();
+}
+
+/* Decided to see if someone else made said function for just one letter */
+function upperCaseFirst(string) 
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function submitNameGenerator(id){
     var numberOfResults = document.getElementById("numberOfResults").value
@@ -408,43 +432,44 @@ function submitNameGenerator(id){
         else if (gender == 'unisex' && ethnicity == 'korean'){
             var names = multipleArrayItemsPrintCombine(korean_names_unisex,korean_surnames,1);
             }
-        else if (gender == 'male' && ethnicity == 'halfling'){
-            var names = multipleArrayItemsPrintCombine(phb_halfling_names_male,phb_halfling_family_names,1);
+        else if (gender == 'male' && ethnicity == 'irish'){
+            var names = multipleArrayItemsPrintCombine(irish_names_male,irish_surnames,1);
             }
-        else if (gender == 'female' && ethnicity == 'halfling'){
-            var names = multipleArrayItemsPrintCombine(phb_halfling_names_female,phb_halfling_family_names,1);
+        else if (gender == 'female' && ethnicity == 'irish'){
+            var names = multipleArrayItemsPrintCombine(irish_names_female,irish_surnames,1);
             }
-        else if (gender== 'male' && ethnicity == 'human'){
-            var names = phbRandomHumanName('male',1);
+        else if (gender == 'unisex' && ethnicity == 'irish'){
+            var names = multipleArrayItemsPrintCombine(irish_names_unisex,irish_surnames,1);
             }
-         else if (gender== 'female' && ethnicity == 'human'){
-            var names = phbRandomHumanName('female',1);
+        else if (gender == 'male' && ethnicity == 'scottGaelic'){
+            var names = multipleArrayItemsPrintCombine(scottish_gaelic_names_male,scottish_gaelic_surnames,1);
             }
-        else if (gender == 'male' && ethnicity == 'dragonborn'){
-            var names = multipleArrayItemsPrintCombine(phb_dragonborn_names_male,phb_dragonborn_clan_names,1);
+        else if (gender == 'female' && ethnicity == 'scottGaelic'){
+            var names = multipleArrayItemsPrintCombine(scottish_gaelic_names_female,scottish_gaelic_surnames,1);
             }
-        else if (gender == 'female' && ethnicity == 'dragonborn'){
-            var names = multipleArrayItemsPrintCombine(phb_dragonborn_names_female,phb_dragonborn_clan_names,1);
+        else if (gender == 'unisex' && ethnicity == 'scottGaelic'){
+            var names = multipleArrayItemsPrintCombine(scottish_gaelic_names_unisex,scottish_gaelic_surnames,1);
             }
-        else if (gender == 'male' && ethnicity == 'gnome'){
-            var names = multipleArrayItemsPrintCombine(phb_gnome_names_male,phb_gnome_clan_names,1);
+        else if (gender == 'male' && ethnicity == 'norse'){
+            var names = getRandomItems(norse_names_male,1);
             }
-        else if (gender == 'female' && ethnicity == 'gnome'){
-            var names = multipleArrayItemsPrintCombine(phb_gnome_names_female,phb_gnome_clan_names,1);
+        else if (gender == 'female' && ethnicity == 'norse'){
+            var names = getRandomItems(norse_names_female,1);
             }
-        /* add orc and half orc*/
-        else if (gender == 'male' && ethnicity == 'orc'){
-            var names = getRandomItems(phb_orc_names_male,1);
-            }
-        else if (gender == 'female' && ethnicity == 'orc'){
-            var names = getRandomItems(phb_orc_names_female,1);
-            }
-        /* add tiefling*/
-        else if (ethnicity == 'valkarie'){
+        else if (gender == 'female' && ethnicity == 'valkarie'){
             var names = getRandomItems(valkarie_names,1);
+            }
+        else if (ethnicity == 'valkarie'){
+            var names = 'All Valkarie are female.';
             }
         else if (ethnicity == 'egyptian'){
             var names = getRandomItems(egyptian_names,1);
+            }
+        else if (ethnicity == 'star'){
+            var names = getRandomItems(star_names,1);
+            }
+        else if (ethnicity == 'random'){
+            var names = randomNameGen(nameGenBeginning,nameGenMiddle,nameGenEnd) + ' ' + upperCaseFirst(randomSurnameGen(mshae_last_names_combined,mshae_last_names_combined));
             }
         else {
             console.log('Option Not selected');
