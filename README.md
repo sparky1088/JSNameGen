@@ -12,7 +12,9 @@ I highly recommend looking at wikipedia for some of the names as they sometimes 
 
 There are lots of places that will generate names I just want to make an open source one that anyone can implement or use.
 [Behind The Name](https://www.behindthename.com/random)
+
 [Fantasy Name Generator](https://www.fantasynamegenerators.com/)
+
 [donjon](https://donjon.bin.sh/fantasy/name/) - This site also lets you make a custom list if you so choose.
 
 I have also modified mike shae's name generator a bit, I plan on separating the male and female names from his list but that might take a while. 
