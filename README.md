@@ -10,7 +10,14 @@ NameGen.js comes from a reddit user /u/boltorian as well as the DM Screen from w
 
 I highly recommend looking at wikipedia for some of the names as they sometimes give meanings so if you are looking for an interesting name with a particular type of meaning/sound then head over there.
 
-You can get name lists from all sorts of sources, if you have some patience you can extract a bunch from the behind the name website [Linked](https://www.behindthename.com/names). 
+There are lots of places that will generate names I just want to make an open source one that anyone can implement or use.
+[Behind The Name](https://www.behindthename.com/random)
+[Fantasy Name Generator](https://www.fantasynamegenerators.com/)
+[donjon](https://donjon.bin.sh/fantasy/name/) - This site also lets you make a custom list if you so choose.
+
+I have also modified mike shae's name generator a bit, I plan on separating the male and female names from his list but that might take a while. 
+
+Lastly I think I will add a unisex option that way people can make more androgonous characters and it not have an obvious name.
 
 I am working on pulling as many as I can from wikipedia of various origins and will eventually separate them out so that the phb name generator is a separte html file and each different nationality/language names will be selectable in their own dropdown like the phb one currently is. 
 

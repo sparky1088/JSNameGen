@@ -329,7 +329,6 @@ function submitNameGeneratorPHB(id){
         else if (gender == 'female' && race == 'halfling'){
             var names = multipleArrayItemsPrintCombine(phb_halfling_names_female,phb_halfling_family_names,1);
             }
-        /* add humans here */
         else if (gender== 'male' && race == 'human'){
             var names = phbRandomHumanName('male',1);
             }
@@ -381,4 +380,77 @@ function randomeNameGen(arr1,arr2,arr3){
 function printNameGenId(id){
     var result = randomeNameGen(nameGenBeginning,nameGenMiddle,nameGenEnd);
     document.getElementById(id).innerHTML= result;
+}
+
+
+function submitNameGenerator(id){
+    var numberOfResults = document.getElementById("numberOfResults").value
+    var num_items;
+    var gender = document.getElementById("gender").value;
+    var ethnicity = document.getElementById("ethnicity").value;
+    for (num_items = 1; num_items <= numberOfResults; num_items++) {
+        /*console.log(gender + ' ' + ethnicity + ' ' + numberOfResults);*/
+        if (gender == 'male' && ethnicity == 'japanese'){
+            var names = multipleArrayItemsPrintCombine(common_japanese_surnames,japanese_names_male,1);
+            }
+        else if (gender == 'female' && ethnicity == 'japanese'){
+            var names = multipleArrayItemsPrintCombine(common_japanese_surnames,japanese_names_male,1);
+            }
+        else if (gender == 'unisex' && ethnicity == 'japanese'){
+            var names = multipleArrayItemsPrintCombine(common_japanese_surnames,japanese_names_unisex,1);
+            }
+        else if (gender == 'male' && ethnicity == 'korean'){
+            var names = multipleArrayItemsPrintCombine(common_korean_names_male,korean_surnames,1);
+            }
+        else if (gender == 'female' && ethnicity == 'korean'){
+            var names = multipleArrayItemsPrintCombine(common_korean_names_female,korean_surnames,1);
+            }
+        else if (gender == 'unisex' && ethnicity == 'korean'){
+            var names = multipleArrayItemsPrintCombine(korean_names_unisex,korean_surnames,1);
+            }
+        else if (gender == 'male' && ethnicity == 'halfling'){
+            var names = multipleArrayItemsPrintCombine(phb_halfling_names_male,phb_halfling_family_names,1);
+            }
+        else if (gender == 'female' && ethnicity == 'halfling'){
+            var names = multipleArrayItemsPrintCombine(phb_halfling_names_female,phb_halfling_family_names,1);
+            }
+        else if (gender== 'male' && ethnicity == 'human'){
+            var names = phbRandomHumanName('male',1);
+            }
+         else if (gender== 'female' && ethnicity == 'human'){
+            var names = phbRandomHumanName('female',1);
+            }
+        else if (gender == 'male' && ethnicity == 'dragonborn'){
+            var names = multipleArrayItemsPrintCombine(phb_dragonborn_names_male,phb_dragonborn_clan_names,1);
+            }
+        else if (gender == 'female' && ethnicity == 'dragonborn'){
+            var names = multipleArrayItemsPrintCombine(phb_dragonborn_names_female,phb_dragonborn_clan_names,1);
+            }
+        else if (gender == 'male' && ethnicity == 'gnome'){
+            var names = multipleArrayItemsPrintCombine(phb_gnome_names_male,phb_gnome_clan_names,1);
+            }
+        else if (gender == 'female' && ethnicity == 'gnome'){
+            var names = multipleArrayItemsPrintCombine(phb_gnome_names_female,phb_gnome_clan_names,1);
+            }
+        /* add orc and half orc*/
+        else if (gender == 'male' && ethnicity == 'orc'){
+            var names = getRandomItems(phb_orc_names_male,1);
+            }
+        else if (gender == 'female' && ethnicity == 'orc'){
+            var names = getRandomItems(phb_orc_names_female,1);
+            }
+        /* add tiefling*/
+        else if (ethnicity == 'valkarie'){
+            var names = getRandomItems(valkarie_names,1);
+            }
+        else if (ethnicity == 'egyptian'){
+            var names = getRandomItems(egyptian_names,1);
+            }
+        else {
+            console.log('Option Not selected');
+            var names = 'Invalid Option Selected';
+            }
+        /*console.log(names);*/
+        document.getElementById(id).innerHTML += "<br>" + num_items + ": " + names;
+    }
 }

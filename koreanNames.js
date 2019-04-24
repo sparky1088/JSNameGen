@@ -171,4 +171,32 @@ var korean_full_given_list = [
     'Hye-jung','Hee-jung','Hae-joo','Hong-joo','Hyo-joo','Hyun-joo','Hyung-joo','Tae-joon','Ha-joon','Ho-jun','Hyun-jun','Hyung-joon','Hee-joon','Hae-jin',
     'Ho-jin','Hyo-jin','Hyun-jin','Hye-jin','Hee-jin','Hee-chul','Hyun-tae','Tae-hyun','Tae-ho','Tae-hee','Hyun-hee'
 ];
+
+var korean_names_unisex = [
+    'Bo-kyung','Bo-ram','Bo-yeon','Boa','Byung-hee',
+    'Chang-min','Chun-hee',
+    'Da-bin','Do-yeon','Dong-joo','Duri',
+    'Eun-jae','Eun-sang','Eun-soo','Eun-sung',
+    'Ha-neul','Ha-sun','Ha-yoon','Hae-jin','Hae-joo','Hae-won','Hee-jin','Hee-jung','Hee-kyung',
+    'Hee-sun','Hee-sung','Ho-jung','Hong-joo','Hye-sung','Hyo-jin','Hyun-hee','Hyun-jin',
+    'Hyun-joo','Hyun-jung','Hyun-kyung','Hyun-soo','Hyung-joo',
+    'In-soo','In-young',
+    'Ja-kyung','Jae-hee','Jae-in','Jae-kyung','Jae-shin','Jae-yoon','Jae-young','Jeong-hyo',
+    'Ji-ha','Ji-hae','Ji-ho','Ji-hu','Ji-hyun','Ji-min','Ji-su','Ji-won','Ji-woo','Ji-yoon',
+    'Jin-hee','Jin-ho','Jin-soo','Jin-sung','Jin-young','Jong-ok','Joo-hyun','Joo-won','Joon-hee',
+    'Jung-eun','Jung-hee','Jung-hwa','Jung-hyun','Jung-min','Jung-won',
+    'Kum-song','Kwang-hee','Kyu-won','Kyung-hee','Kyung-ju','Kyung-lim','Kyung-min','Kyung-sun',
+    'Kyung-won',
+    'Man-hee','Min-jae','Min-ju','Min-kyung','Min-soo','Min-sun','Min-young','Mu-young','Myung-hee',
+    'Nam-seon','Nam-sun','Nuri',
+    'Sang','Sang-eun','Se-bin','Se-yeon','Se-young','Seong-gyeong','Seong-han','Seul-ki','Seung-eun',
+    'Seung-hee','Seung-hwa','Seung-hyun','Seung-min','Seung-yeon','Seung-yong','Shin-young','Si-won',
+    'Soo-hee','Soo-hyun','Soo-jin','Soo-jung','Soo-kyung','Soo-min','Soo-yeon','Soo-young','Su-bin',
+    'Su-ji','Sun-hee','Sun-woo','Sun-young','Sung-hee','Sung-hyun',
+    'Tae-hee','Tae-hyun','Tae-won','Tae-yeon','Tae-young',
+    'Yeon-hee','Yeon-woo','Yi-soo','Yong-hwa','Yoo-jung','Yoon-jung','Young-ha','Young-hee',
+    'Young-jin','Young-joo','Young-nam','Young-shin','Young-soo','Yu-bin','Yu-jin','Yun-hyeong',
+    'Yunseo'
+]
+
 // End of Korean
